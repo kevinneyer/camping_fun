@@ -1,0 +1,13 @@
+<h1><%= @camper.name%>'s Show Page!</h1>
+
+<h3>Camper Name: <%= @camper.name %></h3><br>
+<h3>Age: <%= @camper.age %></h3><br>
+<h3>Activites: </h3>
+  <ul>
+    <% @camper.signups.each do |signup| %>
+      <li><%= signup.activity.name%></li>
+    <%end%>
+  </ul>
+
+  <%= button_to "INDEX", campers_path, method: :get %>
+  <%= button_to "DELETE CAMPER", camper_path(@camper), method: :delete %>
